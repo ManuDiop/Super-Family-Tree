@@ -1,0 +1,23 @@
+@import url('https://fonts.cdnfonts.com/css/comics');
+
+body {
+    font-family: 'Comics', sans-serif;
+    font-style: italic;
+}
+
+a {
+    color: #E20025; /* Rouge pour les liens non visités */
+    text-decoration: underline; /* Soulignés */
+    cursor: pointer; /* Changer le logo de la souris par la main */
+}
+
+/* Liens visités */
+a:visited {
+    color: #C0C0C0; 
+    text-decoration: none; 
+}
+
+/* Au survol */
+a:hover {
+    cursor: pointer; /* Main standard au survol */
+}

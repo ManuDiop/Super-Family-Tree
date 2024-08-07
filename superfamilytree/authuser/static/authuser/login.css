@@ -1,0 +1,83 @@
+/* authuser/static/authuser/styles.css */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #ffffff;
+    border: 2px solid #0060AA;
+    border-radius: 15px;
+    padding: 30px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.login-container img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    border: 2px solid #0060AA;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #0060AA;
+}
+
+.login-container .form-group {
+    margin-bottom: 20px;
+}
+
+.login-container .form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid #0060AA;
+    background-color: #FFFFFF;
+    color: #010101;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.login-container .form-group input:focus {
+    outline: none;
+    border-color: #004080;
+}
+
+.login-container .form-group button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #0060AA;
+    color: #FFFFFF;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-container .form-group button:hover {
+    background-color: #004080;
+}
+
+.login-container .signup-link {
+    margin-top: 10px;
+}
+
+.login-container .signup-link a {
+    color: #0060AA;
+    text-decoration: none;
+}
+
+.login-container .signup-link a:hover {
+    text-decoration: underline;
+}

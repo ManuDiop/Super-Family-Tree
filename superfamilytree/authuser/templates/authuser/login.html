@@ -15,11 +15,8 @@
     <h2>Login</h2>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }} <!-- Rendre le formulaire avec les balises par défaut -->
-        {% if error %}
-            <p style="color: red;">{{ error }}</p>
-        {% endif %}
-        <div class="form-group-3">
+        {{ form.as_p }}
+        <div class="form-group">
             <button type="submit">LOGIN</button>
         </div>
     </form>

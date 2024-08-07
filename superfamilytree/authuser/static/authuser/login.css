@@ -20,34 +20,39 @@ body {
     width: 300px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    position: relative;
 }
 
-/* Logo */
+/* Style pour le logo */
 .login-container img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
+    margin-top: -80px;
     margin-bottom: 20px;
     border-radius: 50%;
     border: 2px solid #0060AA;
 }
 
-/* Titre */
+/* Style pour le titre */
 .login-container h2 {
     margin-bottom: 20px;
     color: #0060AA;
 }
 
-/* Groupes de champs de formulaire */
-.login-container .form-group-1,
-.login-container .form-group-2,
-.login-container .form-group-3 {
+/* Style pour chaque champ du formulaire */
+.login-container p {
     margin-bottom: 20px;
 }
 
-/* Champs de formulaire */
-.login-container .form-group-1 input,
-.login-container .form-group-2 input {
+/* Style pour les labels */
+.login-container p label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #010101;
+}
+
+/* Style pour les inputs */
+.login-container p input {
     width: 100%;
     padding: 10px;
     border-radius: 15px;
@@ -58,15 +63,14 @@ body {
     box-sizing: border-box;
 }
 
-/* Focus sur les champs de formulaire */
-.login-container .form-group-1 input:focus,
-.login-container .form-group-2 input:focus {
+/* Focus sur les inputs */
+.login-container p input:focus {
     outline: none;
     border-color: #004080;
 }
 
-/* Bouton de soumission */
-.login-container .form-group-3 button {
+/* Style pour le bouton de soumission */
+.login-container .form-group button {
     width: 100%;
     padding: 10px;
     border-radius: 25px;
@@ -78,23 +82,20 @@ body {
     margin-top: 10px;
 }
 
-/* Changement de couleur au survol du bouton */
-.login-container .form-group-3 button:hover {
+.login-container .form-group button:hover {
     background-color: #004080;
 }
 
-/* Liens de l'inscription */
-.login-container .signup-link {
+/* Style pour les liens de l'inscription */
+.signup-link {
     margin-top: 10px;
 }
 
-/* Style pour les liens */
-.login-container .signup-link a {
+.signup-link a {
     color: #0060AA;
     text-decoration: none;
 }
 
-/* Souligner le lien au survol */
-.login-container .signup-link a:hover {
+.signup-link a:hover {
     text-decoration: underline;
 }

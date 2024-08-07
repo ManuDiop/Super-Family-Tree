@@ -1,6 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/comics');
 
-body {
+body, button {
     font-family: 'Comics', sans-serif;
     font-style: italic;
 }

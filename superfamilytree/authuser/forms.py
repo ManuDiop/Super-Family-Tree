@@ -13,5 +13,5 @@ class CustomUserChangeForm(UserChangeForm):
         fields = ('email', 'first_name', 'last_name')
 
 class LoginForm(forms.Form):
-    email = forms.EmailField(label='Email')
+    email = forms.EmailField(widget=forms.EmailInput,label='Email')
     password = forms.CharField(widget=forms.PasswordInput, label='Password')

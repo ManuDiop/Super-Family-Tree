@@ -1,13 +1,17 @@
-<!-- authuser/templates/authuser/signup.html -->
-
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Signup Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an account</title>
+    <link rel="stylesheet" href="{% static 'authuser/signup.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
 </head>
 <body>
     <div class="container">
-        <h2>Sign Up</h2>
+        <img src="{% static 'assets/logo-super.png' %}" alt="Logo"> 
+        <h2>Become a member of the Super's Family Tree !</h2>
         <form method="post">
             {% csrf_token %}
             <div class="form-group">
@@ -34,6 +38,9 @@
                 <button type="submit">Sign Up</button>
             </div>
         </form>
+        <div class="signup-link">
+            <a href="{% url 'login' %}">Get back to Login</a>
+        </div>
     </div>
 </body>
 </html>

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from .forms import CustomUserCreationForm, LoginForm
+from django.contrib.auth.decorators import login_required
 
 def signup(request):
     if request.method == 'POST':
@@ -9,7 +10,7 @@ def signup(request):
             form.save()
             email = form.cleaned_data.get('email')
             raw_password = form.cleaned_data.get('password1')
-            user = authenticate(email=email, password=raw_password)
+            user = authenticate(username=email, password=raw_password)
             if user is not None:
                 auth_login(request, user)
                 return redirect('home')
@@ -23,7 +24,7 @@ def login_view(request):
         if form.is_valid():
             email = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password')
-            user = authenticate(email=email, password=password)
+            user = authenticate(username=email, password=password)
             if user is not None:
                 auth_login(request, user)
                 return redirect('home')
@@ -37,3 +38,7 @@ def login_view(request):
 def logout_view(request):
     auth_logout(request)
     return redirect('home')
+
+@login_required
+def home(request):
+    return render(request, 'authuser/home.html')

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, logout, authenticate
-from .forms import CustomUserCreationForm
+from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
+from .forms import CustomUserCreationForm, LoginForm
 
 def signup(request):
     if request.method == 'POST':
@@ -10,26 +10,30 @@ def signup(request):
             email = form.cleaned_data.get('email')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(email=email, password=raw_password)
-            login(request, user)
-            return redirect('home')
+            if user is not None:
+                auth_login(request, user)
+                return redirect('home')
     else:
         form = CustomUserCreationForm()
     return render(request, 'authuser/signup.html', {'form': form})
 
-def login(request):
+def login_view(request):
     if request.method == 'POST':
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-        user = authenticate(email=email, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('home')
-        else:
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data.get('email')
+            password = form.cleaned_data.get('password')
+            user = authenticate(email=email, password=password)
+            if user is not None:
+                auth_login(request, user)
+                return redirect('home')
+            else:
             # Gestion d'un mail ou mot de passe incorrect
-            return render(request, 'authuser/login.html', {'error': 'Invalid email or password'})
+                return render(request, 'authuser/login.html', {'error': 'Invalid email or password'})
     else:
-        return render(request, 'authuser/login.html')
+        form = LoginForm()
+    return render(request, 'authuser/login.html', {'form': form})
     
-def logout(request):
-    logout(request)
+def logout_view(request):
+    auth_logout(request)
     return redirect('home')

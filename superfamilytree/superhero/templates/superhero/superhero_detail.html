@@ -5,11 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ hero.name }} - Detail</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
     <link rel="stylesheet" href="{% static 'superhero/superhero_detail.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
-        <!-- NavBar Code Here -->
+        <header>
+            <nav>
+                <div class="nav-logo">
+                    <img src="{% static 'assets/logo-super.png' %}" alt="Logo">
+                </div>
+                <div class="nav-search">
+                    <input type="text" placeholder="Search">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="nav-user">
+                    <span>Welcome {{ user.first_name}} </span>
+                    <a href="{% url 'logout' %}">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </div>
+            </nav>
+        </header>
     </header>
 
     <main>
@@ -28,7 +48,11 @@
             <div>
                 <!-- Display the parent and children tree -->
                 <ul>
-                    <li>{{ hero.parent.name if hero.parent else "No parent" }}</li>
+                    {% if hero.parent %}
+                        <li>{{ hero.parent.name }}</li>
+                    {% else %}
+                        <li>No parent</li>
+                    {% endif %}
                     {% for child in hero.children.all %}
                         <li>{{ child.name }}</li>
                     {% endfor %}

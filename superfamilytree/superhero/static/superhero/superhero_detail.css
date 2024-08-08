@@ -20,7 +20,7 @@ nav {
     border: 2px solid #FFFFFF;
 }
 
-.nav-search input[type="text"] {
+.nav-search input {
     padding: 10px;
     border-radius: 15px;
     border: 2px solid #0060AA;

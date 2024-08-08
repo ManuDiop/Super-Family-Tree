@@ -26,7 +26,7 @@
             <div class="nav-user">
                 <span>Welcome {{ user.first_name}} </span>
                 <a href="{% url 'logout' %}">
-                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    <i class="fas fa-home"></i>
                 </a>
             </div>
         </nav>
@@ -35,10 +35,11 @@
     <!-- Grille des super-héros -->
     <main>
         <section class="heroes-grid">
-            <!-- {% for hero in heroes %}
+            {% for hero in heroes %}
                 <div class="hero-card">
-                    <h3>{{ hero.name }}</h3>
-                    <p><strong>Skills:</strong></p>
+                    <a href="{% url 'superhero_detail' hero.id %}"><h3>{{ hero.name }}</h3></a>
+                    <p> {{ hero.description }}</p>
+                    <p><strong>skills:</strong></p>
                     <ul>
                         <li>{{ hero.skill1 }}</li>
                         {% if hero.skill2 %}
@@ -48,11 +49,10 @@
                             <li>{{ hero.skill3 }}</li>
                         {% endif %}
                     </ul>
-                    <p><strong>Age:</strong> {{ hero.age }}</p>
                 </div>
-            {% endfor %} -->
+            {% endfor %}
             <div class="hero-card">
-                <h3>Super 1</h3>
+                <a href="#"><h3>Super 1</h3></a>
                 <p><strong>Skills:</strong></p>
                 <ul>
                     <li>Laser eyes</li>

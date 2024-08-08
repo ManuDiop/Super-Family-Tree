@@ -1,5 +1,4 @@
 body {
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
@@ -38,7 +37,7 @@ nav {
     padding: 10px;
     border-radius: 25px;
     color: #FFFFFF;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
     margin-left: 10px;
 }
@@ -183,4 +182,19 @@ nav {
     cursor: pointer;
     background-color: #E20025;
     color: #FFFFFF;
+}
+
+/* Charte graphique - Liens */
+a {
+    color: #E20025;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #C0C0C0;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
 }

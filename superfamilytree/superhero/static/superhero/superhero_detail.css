@@ -1,0 +1,196 @@
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barre de navigation */
+nav {
+    background-color: #0060AA;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.nav-logo img {
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+}
+
+.nav-search input[type="text"] {
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid #0060AA;
+    background-color: #FFFFFF;
+    color: #010101;
+    font-size: 14px;
+    width: 200px;
+}
+
+.nav-search button {
+    background-color: #0060AA;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+}
+
+.nav-user span {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.nav-user a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.nav-user a:hover {
+    cursor: pointer;
+    color: #E20025;
+}
+
+/* Container principal */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.superhero-detail,
+.relations {
+    background-color: #FFFFFF;
+    border: 2px solid #0060AA;
+    border-radius: 15px;
+    padding: 20px;
+    margin-right: 20px;
+    width: 300px;
+}
+
+.superhero-detail h2 {
+    color: #0060AA;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.superhero-detail form {
+    display: flex;
+    flex-direction: column;
+}
+
+.superhero-detail .form-group {
+    margin-bottom: 15px;
+}
+
+.superhero-detail input[type="text"],
+.superhero-detail textarea,
+.superhero-detail select {
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid #0060AA;
+    background-color: #FFFFFF;
+    color: #010101;
+    font-size: 14px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.superhero-detail button[type="submit"] {
+    padding: 10px;
+    border-radius: 25px;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.superhero-detail button[name="modify"] {
+    background-color: #0060AA;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.superhero-detail button[name="modify"]:hover {
+    background-color: #004080;
+}
+
+.superhero-detail button[name="delete"] {
+    background-color: #E20025;
+    border: none;
+}
+
+.superhero-detail button[name="delete"]:hover {
+    background-color: #B8001A;
+}
+
+/* Relations Section */
+.relations h2 {
+    color: #0060AA;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.relations button {
+    padding: 10px;
+    border-radius: 25px;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.relations button:first-child {
+    background-color: #E20025;
+}
+
+.relations button:first-child:hover {
+    background-color: #B8001A;
+}
+
+.relations button:last-child {
+    background-color: #FFED10;
+    color: #010101;
+}
+
+.relations button:last-child:hover {
+    background-color: #D4BC08;
+}
+
+.relations ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 14px;
+}
+
+.relations ul li {
+    color: #010101;
+    margin-bottom: 5px;
+}
+
+/* Liens */
+a {
+    color: #E20025;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #C0C0C0;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}

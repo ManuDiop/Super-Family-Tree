@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from .forms import CustomUserCreationForm, LoginForm
 from django.contrib.auth.decorators import login_required
+from superhero.models import SuperHero
 
 def signup(request):
     if request.method == 'POST':
@@ -37,8 +38,15 @@ def login_view(request):
     
 def logout_view(request):
     auth_logout(request)
-    return redirect('home')
+    return redirect('login')
 
 @login_required
 def home(request):
-    return render(request, 'authuser/home.html')
+    context = {
+        'user': request.user
+    }
+    return render(request, 'authuser/home.html', context)
+
+def home(request):
+    heroes = SuperHero.objects.all()
+    return render(request, 'authuser/home.html', {'heroes': heroes})

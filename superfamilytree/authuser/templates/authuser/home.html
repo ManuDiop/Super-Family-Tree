@@ -4,11 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to the Super's Family Tree!</title>
+    <link rel="stylesheet" href="{% static 'authuser/home.css' %}">
     <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Super Family Tree - Home</title>    
 </head>
 <body>
-    <h1>Welcome to the Super's Family Tree!</h1>
-    <p>This is the homepage.</p>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="nav-logo">
+                <img src="{% static 'assets/logo-super.png' %}" alt="Logo">
+            </div>
+            <div class="nav-search">
+                <input type="text" placeholder="Search">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="nav-user">
+                <span>Welcome {{ user.first_name}} </span>
+                <a href="{% url 'logout' %}">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Grille des super-héros -->
+    <main>
+        <section class="heroes-grid">
+            <!-- {% for hero in heroes %}
+                <div class="hero-card">
+                    <h3>{{ hero.name }}</h3>
+                    <p><strong>Skills:</strong></p>
+                    <ul>
+                        <li>{{ hero.skill1 }}</li>
+                        {% if hero.skill2 %}
+                            <li>{{ hero.skill2 }}</li>
+                        {% endif %}
+                        {% if hero.skill3 %}
+                            <li>{{ hero.skill3 }}</li>
+                        {% endif %}
+                    </ul>
+                    <p><strong>Age:</strong> {{ hero.age }}</p>
+                </div>
+            {% endfor %} -->
+            <div class="hero-card">
+                <h3>Super 1</h3>
+                <p><strong>Skills:</strong></p>
+                <ul>
+                    <li>Laser eyes</li>
+                    <li>Can fly</li>
+                </ul>
+                <p><strong>Age:</strong> 32</p>
+            </div>
+            <div class="hero-card">
+                <h3>Super 2</h3>
+                <p><strong>Skills:</strong></p>
+                <ul>
+                    <li>Super strength</li>
+                    <li>Can teleport</li>
+                </ul>
+                <p><strong>Age:</strong> 28</p>
+            </div>
+            <!-- Bouton "Add a Super" -->
+            <div class="hero-card add-super">
+                <a href="#">
+                    <i class="fab fa-superpowers"></i>
+                    <span>Add a Super</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+
+            <a href="#">&raquo;</a>
+        </div>
+    </main>
+
 </body>
 </html>

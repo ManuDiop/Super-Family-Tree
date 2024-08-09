@@ -1,24 +1,179 @@
 @import url('https://fonts.cdnfonts.com/css/comics');
 
-body, button, h2 {
-    background-color: #f4f4f4;
+/* --- Global --- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
     font-family: 'Comics', sans-serif;
     font-style: italic;
+    background-color: #f4f4f4;
+    color: #010101;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #E20025;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 20px;
 }
 
 a {
-    color: #E20025; 
-    text-decoration: underline; 
-    cursor: pointer; 
+    color: #E20025;
+    text-decoration: underline;
 }
 
-/* Liens visités */
-a:visited {
-    color: #C0C0C0; 
-    text-decoration: none; 
-}
-
-/* Au survol */
 a:hover {
-    cursor: pointer; /* Main standard au survol */
+    cursor: pointer;
 }
+
+a:visited {
+    color: #C0C0C0;
+    text-decoration: none;
+}
+
+button, .button {
+    display: inline-block;
+    background-color: #0060AA;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-style: italic;
+}
+
+button:hover, .button:hover {
+    background-color: #004080;
+}
+
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: 2px solid #0060AA;
+    background-color: #FFFFFF;
+    color: #010101;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #004080;
+}
+
+/* Messages d'erreur */
+.form-errors {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.field-errors {
+    color: red;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+/* Style de la navbar */
+nav {
+    background-color: #0060AA;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.nav-logo img {
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+}
+
+.nav-search input {
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid #0060AA;
+    background-color: #FFFFFF;
+    color: #010101;
+    font-size: 14px;
+    width: 200px;
+}
+
+.nav-search button {
+    background-color: #0060AA;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+}
+
+.nav-user span {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.nav-user a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.nav-user a:hover {
+    cursor: pointer;
+    color: #E20025;
+}
+
+.nav-user i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+

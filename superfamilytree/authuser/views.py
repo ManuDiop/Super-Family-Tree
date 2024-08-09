@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login as auth_login, logout as aut
 from .forms import CustomUserCreationForm, LoginForm
 from django.contrib.auth.decorators import login_required
 from superhero.models import SuperHero
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def signup(request):
     if request.method == 'POST':
@@ -49,4 +50,16 @@ def home(request):
 
 def home(request):
     heroes = SuperHero.objects.all()
+    paginator = Paginator(heroes, 7)
+
+    page = request.GET.get('page')
+
+    try:
+        heroes = paginator.page(page)
+    except PageNotAnInteger:
+        heroes = paginator.page(1)
+    except EmptyPage:
+        heroes = paginator.page(paginator.num_pages)
+
+
     return render(request, 'authuser/home.html', {'heroes': heroes})

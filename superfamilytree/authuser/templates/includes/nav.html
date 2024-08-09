@@ -1,0 +1,23 @@
+<!-- Navbar -->
+{% load static %}
+<header>
+    <nav>
+        <div class="nav-logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'assets/logo-super.png' %}" alt="Logo">
+            </a>
+        </div>
+        <div class="nav-search">
+            <input type="text" placeholder="Search">
+            <button type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div class="nav-user">
+            <span>Welcome {{ user.first_name}} </span>
+            <a href="{% url 'logout' %}">
+                <i class="fas fa-home"></i>
+            </a>
+        </div>
+    </nav>
+</header>

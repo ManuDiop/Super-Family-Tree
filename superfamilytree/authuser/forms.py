@@ -7,11 +7,6 @@ class CustomUserCreationForm(UserCreationForm):
         model = User
         fields = ('email', 'first_name', 'last_name')
 
-class CustomUserChangeForm(UserChangeForm):
-    class Meta(UserChangeForm.Meta):
-        model = User
-        fields = ('email', 'first_name', 'last_name')
-
 class LoginForm(forms.Form):
     email = forms.EmailField(widget=forms.EmailInput,label='Email')
     password = forms.CharField(widget=forms.PasswordInput, label='Password')

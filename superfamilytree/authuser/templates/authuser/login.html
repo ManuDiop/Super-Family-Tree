@@ -13,6 +13,13 @@
 <div class="login-container">
     <img src="{% static 'assets/logo-super.png' %}" alt="Logo"> 
     <h2>Enter the Super's Family Tree !</h2>
+
+    {% if error %}
+        <div class="form-errors">
+            <p>{{ error }}</p>
+        </div>
+    {% endif %}
+
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}

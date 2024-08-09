@@ -6,6 +6,7 @@ class SuperHero(models.Model):
     skill1 = models.CharField(max_length=100)
     skill2 = models.CharField(max_length=100, null=True, blank=True)
     skill3 = models.CharField(max_length=100, null=True, blank=True)
+    image = models.CharField(max_length=255, null=True, blank=True)
     parent = models.ForeignKey(
         'self', 
         on_delete=models.CASCADE, 

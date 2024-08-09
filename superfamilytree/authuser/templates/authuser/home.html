@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/nav.css' %}">
     <link rel="stylesheet" href="{% static 'authuser/home.css' %}">
     <link rel="stylesheet" href="{% static 'styles/main.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -12,31 +13,19 @@
 <body>
 
     <!-- Navbar -->
-    <header>
-        <nav>
-            <div class="nav-logo">
-                <img src="{% static 'assets/logo-super.png' %}" alt="Logo">
-            </div>
-            <div class="nav-search">
-                <input type="text" placeholder="Search">
-                <button type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-            <div class="nav-user">
-                <span>Welcome {{ user.first_name}} </span>
-                <a href="{% url 'logout' %}">
-                    <i class="fas fa-home"></i>
-                </a>
-            </div>
-        </nav>
-    </header>
+    {% include 'includes/nav.html' %}
 
     <!-- Grille des super-héros -->
     <main>
+        <div class="intro">
+            <h1>Welcome on the super's family tree</h1>
+            <p>Here you'll find a great list of supers, and their parent/child relation</p>
+            <p>You can modify their caracteristics and even delete them</p>
+        </div>
         <section class="heroes-grid">
             {% for hero in heroes %}
                 <div class="hero-card">
+                    <img src="{% static 'assets/' %}{{ hero.image }}" alt="{{ hero.name }}">
                     <a href="{% url 'superhero_detail' hero.id %}"><h3>{{ hero.name }}</h3></a>
                     <p> {{ hero.description }}</p>
                     <p><strong>skills:</strong></p>
@@ -51,27 +40,9 @@
                     </ul>
                 </div>
             {% endfor %}
-            <div class="hero-card">
-                <a href="#"><h3>Super 1</h3></a>
-                <p><strong>Skills:</strong></p>
-                <ul>
-                    <li>Laser eyes</li>
-                    <li>Can fly</li>
-                </ul>
-                <p><strong>Age:</strong> 32</p>
-            </div>
-            <div class="hero-card">
-                <h3>Super 2</h3>
-                <p><strong>Skills:</strong></p>
-                <ul>
-                    <li>Super strength</li>
-                    <li>Can teleport</li>
-                </ul>
-                <p><strong>Age:</strong> 28</p>
-            </div>
-            <!-- Bouton "Add a Super" -->
+            <!-- Bouton Ajouter un super -->
             <div class="hero-card add-super">
-                <a href="#">
+                <a href="{% url 'add_superhero' %}">
                     <i class="fab fa-superpowers"></i>
                     <span>Add a Super</span>
                 </a>
@@ -80,13 +51,22 @@
 
         <!-- Pagination -->
         <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-
-            <a href="#">&raquo;</a>
-        </div>
+            <span class="step-links">
+                {% if heroes.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ heroes.previous_page_number }}">previous</a>
+                {% endif %}
+    
+                <span class="current">
+                    Page {{ heroes.number }} of {{ heroes.paginator.num_pages }}.
+                </span>
+    
+                {% if heroes.has_next %}
+                    <a href="?page={{ heroes.next_page_number }}">next</a>
+                    <a href="?page={{ heroes.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>    
     </main>
 
 </body>

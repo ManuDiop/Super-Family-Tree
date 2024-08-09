@@ -3,68 +3,11 @@ body {
     padding: 0;
 }
 
-/* Barre de navigation */
-nav {
-    background-color: #0060AA;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #FFFFFF;
-}
+/* Texte de bienvenue */
 
-.nav-logo img {
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid #FFFFFF;
-}
-
-.nav-search input {
-    padding: 10px;
-    border-radius: 15px;
-    border: 2px solid #0060AA;
-    background-color: #FFFFFF;
-    color: #010101;
-    font-size: 14px;
-    width: 200px;
-    font-family: 'Comics', sans-serif;
-    font-style: italic;
-}
-
-.nav-search button {
-    background-color: #0060AA;
-    border: none;
-    padding: 10px;
-    border-radius: 25px;
-    color: #FFFFFF;
-    font-size: 18px;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-.nav-user {
-    display: flex;
-    align-items: center;
-}
-
-.nav-user span {
-    margin-right: 10px;
-    font-weight: bold;
-}
-
-.nav-user a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-.nav-user a:hover {
-    cursor: pointer;
-    color: #E20025;
-}
-
-.nav-user i {
-    font-size: 24px;
-    margin-right: 10px;
+.intro {
+    width: auto;
+    text-align: center;
 }
 
 /* Grille des super-héros */
@@ -82,6 +25,16 @@ nav {
     padding: 20px;
     text-align: center;
     font-style: italic;
+    position: relative;
+}
+
+.hero-card img {
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%;  
+    border: 2px solid #0060AA;  
+    object-fit: cover;  
+    margin-bottom: 15px;
 }
 
 .hero-card h3 {

@@ -73,3 +73,16 @@ h2 {
 .form-group button:hover {
     background-color: #004080;
 }
+
+/* erreurs dans le formulaire */
+
+.field-errors p {
+    color: red;
+    font-style: italic;
+    margin: 5px 0 0 0;
+}
+
+.form-errors p {
+    color: red;
+    font-weight: bold;
+}

@@ -8,16 +8,21 @@
             </a>
         </div>
         <div class="nav-search">
-            <input type="text" placeholder="Search">
-            <button type="submit">
-                <i class="fas fa-search"></i>
-            </button>
+            <form action="{% url 'search_hero' %}" method="get">
+                <input type="text" name="q" placeholder="Search">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
         </div>
         <div class="nav-user">
             <span>Welcome {{ user.first_name}} </span>
-            <a href="{% url 'logout' %}">
-                <i class="fas fa-home"></i>
-            </a>
+            <form id="logout-form" action="{% url 'logout' %}" method="POST" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </form>
         </div>
     </nav>
 </header>

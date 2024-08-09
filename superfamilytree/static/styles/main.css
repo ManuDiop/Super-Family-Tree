@@ -59,6 +59,7 @@ button, .button {
     border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
+    font-family: 'Comics', sans-serif;
     font-style: italic;
 }
 
@@ -118,43 +119,61 @@ img {
 /* Style de la navbar */
 nav {
     background-color: #0060AA;
-    padding: 10px;
+    padding: 5px 10px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #FFFFFF;
+    position: relative;
+}
+
+.nav-logo {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    height: 110px;
+    width: 110px;
+    z-index: 1;
 }
 
 .nav-logo img {
-    height: 50px;
+    height: 110px;
+    width: 110px; 
     border-radius: 50%;
     border: 2px solid #FFFFFF;
 }
 
+.nav-search {
+    display: flex;
+    align-items: center;
+    margin-left: 40%;
+}
+
 .nav-search input {
-    padding: 10px;
-    border-radius: 15px;
+    margin-top: 10px;
+    padding: 5px 10px; 
+    border-radius: 10px;
     border: 2px solid #0060AA;
     background-color: #FFFFFF;
     color: #010101;
     font-size: 14px;
-    width: 200px;
+    width: 180px;
+    margin-right: 10px; 
 }
 
 .nav-search button {
     background-color: #0060AA;
     border: none;
-    padding: 10px;
-    border-radius: 25px;
+    padding: 5px 10px; 
+    border-radius: 20px;
     color: #FFFFFF;
     font-size: 14px;
     cursor: pointer;
-    margin-left: 10px;
 }
 
 .nav-user {
     display: flex;
-    align-items: center;
+    align-items: center; 
 }
 
 .nav-user span {
@@ -173,7 +192,8 @@ nav {
 }
 
 .nav-user i {
-    font-size: 20px;
-    margin-right: 10px;
+    font-size: 18px; 
+    margin-right: 5px; 
 }
+
 

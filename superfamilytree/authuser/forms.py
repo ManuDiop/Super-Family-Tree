@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserCreationForm
 from .models import User
 
 class CustomUserCreationForm(UserCreationForm):
@@ -10,3 +10,6 @@ class CustomUserCreationForm(UserCreationForm):
 class LoginForm(forms.Form):
     email = forms.EmailField(widget=forms.EmailInput,label='Email')
     password = forms.CharField(widget=forms.PasswordInput, label='Password')
+
+class LogoutForm(forms.Form):
+    pass

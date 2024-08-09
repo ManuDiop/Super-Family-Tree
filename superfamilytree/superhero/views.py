@@ -38,3 +38,14 @@ def add_superhero(request):
 
     return render(request, 'superhero/add_superhero.html', {'form': form})
 
+# Résultat de la recherche
+def search_hero(request):
+    query = request.GET.get('q')
+    if query:
+        heroes = SuperHero.objects.filter(name__icontains=query)
+        if heroes.count() == 1:
+            return redirect('superhero_detail', pk=heroes.first().pk)
+    else:
+        heroes = SuperHero.objects.all()
+
+    return render(request, 'authuser/home.html', {'heroes': heroes, 'query': query})

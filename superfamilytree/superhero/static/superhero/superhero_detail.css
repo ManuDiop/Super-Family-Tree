@@ -1,0 +1,109 @@
+/* Style pour le container principal */
+.superhero-container {
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.superhero-detail, .relations {
+    flex: 1;
+    background-color: #FFFFFF;
+    border: 2px solid #0060AA;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Groupement des boutons MODIFY et DELETE */
+.superhero-detail .button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.superhero-detail button {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.superhero-detail button[name="modify"] {
+    background-color: #0060AA;
+    color: #FFFFFF;
+}
+
+.superhero-detail button[name="delete"] {
+    background-color: #E20025;
+    color: #FFFFFF;
+}
+
+.superhero-detail button:hover {
+    opacity: 0.9;
+}
+
+/* Style pour les relations (parent/enfant) */
+.relations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.relations .button-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.relations button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Comics', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.relations button:first-of-type {
+    background-color: #E20025;
+    color: #FFFFFF;
+}
+
+.relations button:last-of-type {
+    background-color: #FFED10;
+    color: #0060AA;
+}
+
+.relations button:hover {
+    opacity: 0.9;
+}
+
+.relations div {
+    margin-top: 10px;
+    background-color: #FFFFFF;
+    border: 2px solid #0060AA;
+    border-radius: 15px;
+    padding: 15px;
+    width: 100%;
+}
+
+.relations ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.relations ul li {
+    margin-left: 20px;
+    color: #E20025;
+}
+
+.relations ul li span {
+    color: #010101
+}

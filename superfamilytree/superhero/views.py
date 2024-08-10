@@ -2,18 +2,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import SuperHero
 from .forms import SuperHeroForm
 
-# gérer l'affichage d'un enfant sans duplication (récursivité)
-def get_unique_children(hero, seen=None):
-    if seen is None:
-       seen = set()
-    unique_children = []
-    for child in hero.children.all():
-        if child not in seen:
-            seen.add(child)
-            unique_children.append(child)
-            unique_children.extend(get_unique_children(child, seen))
-    return unique_children
-
 # View du superhéros, de ses enfants, modification et suppression
 def superhero_detail(request, pk): 
     hero = get_object_or_404(SuperHero, pk=pk)
@@ -30,14 +18,17 @@ def superhero_detail(request, pk):
     else:
         form = SuperHeroForm(instance=hero)
 
-    unique_children = get_unique_children(hero)
+    parents = []
+    current_hero = hero.parent
+    while current_hero:
+        parents.append(current_hero)
+        current_hero = current_hero.parent
 
     context = {
         'hero': hero,
         'form': form,
-        'parents': hero.parent,
-        'children': unique_children,
-        'seen': set(),
+        'parents': parents[::-1],
+        'children': hero.children.all(),
     }
     return render(request, 'superhero/superhero_detail.html', context)
 

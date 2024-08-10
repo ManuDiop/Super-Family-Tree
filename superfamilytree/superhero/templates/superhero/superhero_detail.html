@@ -30,34 +30,37 @@
                     <button onclick="showParents()">Show parents</button>
                     <button onclick="showChildren()">Show children</button>
                 </div>
-                <div id="parent-tree" style="display:none;">
-                    <ul>
-                        {% if hero.parent %}
-                            <li>{{ hero.parent.name }}</li>
-                            {% if hero.parent.parent %}
-                                <ul>
-                                    {% with hero=hero.parent %}
-                                        {% include "superhero/relations_parents.html" %}
-                                    {% endwith %}
-                                </ul>
-                            {% endif %}
-                        {% else %}
-                            <li>No parent</li>
-                        {% endif %}
-                    </ul>
+
+                <!-- Arbre des parents -->
+                <div id="parent-tree" style="display:block;">
+                    {% if parents %}
+                        <ul class="tree">
+                            {% for parent in parents %}
+                            <li>{{ parent.name }}</li>
+                            {% endfor %}
+                            <li class="current-hero">{{ hero.name }}</li>
+                        </ul>
+                    {% else %}
+                        <p>No parent</p>
+                    {% endif %}
                 </div>
+
+                <!-- Arbre des enfants -->
                 <div id="children-tree" style="display:none;">
-                    <ul>
-                        {% for child in children %}
-                            {% with seen=seen %}
-                                {% include "superhero/relations_children.html" %}
-                            {% endwith %}
-                        {% endfor %}
-                    </ul>                         
+                    {% if children %}
+                        <ul class="tree">
+                            {% for child in children %}
+                            <li>{{ child.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No children</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </main>
+
     <script>
         function showParents() {
             document.getElementById("parent-tree").style.display = "block";
@@ -68,6 +71,23 @@
             document.getElementById("parent-tree").style.display = "none";
             document.getElementById("children-tree").style.display = "block";
         }
-    </script>    
+
+        // Script pour l'indentation 
+        document.addEventListener("DOMContentLoaded", function() {
+            // éléments li dans les arbres généalogiques
+            var parentItems = document.querySelectorAll("#parent-tree .tree li");
+            var childItems = document.querySelectorAll("#children-tree .tree li");
+            
+            // indentation pour les parents
+            parentItems.forEach(function(item, index) {
+                item.style.marginLeft = (index * 20) + 'px'; // 20px par niveau
+            });
+            
+            // indentation pour les enfants
+            childItems.forEach(function(item, index) {
+                item.style.marginLeft = (index * 20) + 'px'; // 20px par niveau
+            });
+        });
+    </script>
 </body>
 </html>

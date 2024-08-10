@@ -1,0 +1,16 @@
+<li>
+    {% if child not in seen %}
+    <li>{{ child.name }}</li>
+        {% with seen=seen|add:child %}
+            {% if child.children.exists %}
+                <ul>
+                    {% for subchild in child.children.all %}
+                        {% with hero=subchild %}
+                            {% include "superhero/relations_children.html" %}
+                        {% endwith %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    {% endif %}
+</li>

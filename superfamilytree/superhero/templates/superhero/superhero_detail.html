@@ -27,24 +27,47 @@
 
             <div class="relations">
                 <div class="button-group">
-                    <button>Show parents</button>
-                    <button>Show children</button>
+                    <button onclick="showParents()">Show parents</button>
+                    <button onclick="showChildren()">Show children</button>
                 </div>
-                <div>
-                    <!-- Display the parent and children tree -->
+                <div id="parent-tree" style="display:none;">
                     <ul>
                         {% if hero.parent %}
                             <li>{{ hero.parent.name }}</li>
+                            {% if hero.parent.parent %}
+                                <ul>
+                                    {% with hero=hero.parent %}
+                                        {% include "superhero/relations_parents.html" %}
+                                    {% endwith %}
+                                </ul>
+                            {% endif %}
                         {% else %}
                             <li>No parent</li>
                         {% endif %}
-                        {% for child in hero.children.all %}
-                            <li>{{ child.name }}</li>
-                        {% endfor %}
                     </ul>
+                </div>
+                <div id="children-tree" style="display:none;">
+                    <ul>
+                        {% for child in children %}
+                            {% with seen=seen %}
+                                {% include "superhero/relations_children.html" %}
+                            {% endwith %}
+                        {% endfor %}
+                    </ul>                         
                 </div>
             </div>
         </div>
     </main>
+    <script>
+        function showParents() {
+            document.getElementById("parent-tree").style.display = "block";
+            document.getElementById("children-tree").style.display = "none";
+        }
+    
+        function showChildren() {
+            document.getElementById("parent-tree").style.display = "none";
+            document.getElementById("children-tree").style.display = "block";
+        }
+    </script>    
 </body>
 </html>

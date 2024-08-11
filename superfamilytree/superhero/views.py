@@ -11,7 +11,7 @@ def superhero_detail(request, pk):
             form = SuperHeroForm(request.POST, instance=hero)
             if form.is_valid():
                 form.save()
-                return redirect('superhero_detail', pk=pk)
+                return redirect('home')
         elif 'delete' in request.POST:
             hero.delete()
             return redirect('home')

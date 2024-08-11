@@ -159,6 +159,8 @@ nav {
     font-size: 14px;
     width: 180px;
     margin-right: 10px; 
+    font-family: 'Comics', sans-serif;
+    font-style: italic;
 }
 
 .nav-search button {
@@ -167,7 +169,7 @@ nav {
     padding: 5px 10px; 
     border-radius: 20px;
     color: #FFFFFF;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
 }
 
@@ -188,12 +190,11 @@ nav {
 
 .nav-user a:hover {
     cursor: pointer;
-    color: #E20025;
 }
 
 .nav-user i {
     font-size: 18px; 
-    margin-right: 5px; 
+    margin-right: 2px; 
 }
 
 

@@ -20,7 +20,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-style: italic;
+    transition: transform 0.3s ease;
+}
+
+.hero-card:hover {
+    transform: scale(1.05);
 }
 
 .hero-card img {
@@ -28,7 +32,7 @@
     width: 100px;
     align-items: center;
     border-radius: 50%;
-    border: 2px solid #E20025;
+    border: 2px solid #FFBD00;
     margin-bottom: 10px;
 }
 
@@ -46,7 +50,7 @@
 .hero-card ul {
     list-style-type: disc;
     margin: 10px 0;
-    padding-left: 20px;
+    padding-left: 10px;
     text-align: left;
 }
 

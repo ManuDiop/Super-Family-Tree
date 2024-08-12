@@ -48,9 +48,10 @@ def home(request):
     }
     return render(request, 'authuser/home.html', context)
 
+@login_required
 def home(request):
-    heroes = SuperHero.objects.all()
-    paginator = Paginator(heroes, 7)
+    heroes = SuperHero.objects.all().order_by('name')
+    paginator = Paginator(heroes, 9)
 
     page = request.GET.get('page')
 

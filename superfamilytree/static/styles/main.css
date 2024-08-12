@@ -26,28 +26,16 @@ body {
     padding: 20px;
 }
 
+h1 {
+    font-size: 40px;
+}
+
 h1, h2, h3 {
-    color: #E20025;
-    font-style: italic;
     margin-bottom: 20px;
 }
 
 p {
     margin-bottom: 20px;
-}
-
-a {
-    color: #E20025;
-    text-decoration: underline;
-}
-
-a:hover {
-    cursor: pointer;
-}
-
-a:visited {
-    color: #C0C0C0;
-    text-decoration: none;
 }
 
 button, .button {
@@ -80,6 +68,7 @@ select {
     color: #010101;
     font-size: 14px;
     box-sizing: border-box;
+    font-family: 'Comics', sans-serif;
 }
 
 input:focus,
@@ -93,27 +82,13 @@ select:focus {
 .form-errors {
     color: red;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .field-errors {
     color: red;
     font-style: italic;
     margin-top: 5px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.margin-bottom {
-    margin-bottom: 20px;
 }
 
 /* Style de la navbar */
@@ -195,6 +170,26 @@ nav {
 .nav-user i {
     font-size: 18px; 
     margin-right: 2px; 
+}
+
+/* Gestion des liens */
+
+a.link {
+    color: #E20025; 
+    text-decoration: underline; 
+}
+
+a.link.visited{
+    color: #C0C0C0; 
+    text-decoration: none !important; 
+}
+
+a:hover {
+    cursor: pointer; 
+}
+
+a.link.active {
+    color: #E20025; 
 }
 
 

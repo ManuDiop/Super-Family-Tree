@@ -37,7 +37,6 @@
 }
 
 .hero-card h3 {
-    color: #E20025;
     font-size: 18px;
     margin-bottom: 10px;
 }
@@ -99,7 +98,7 @@
     font-style: italic;
 }
 
-.pagination a {
+.pagination a:link {
     text-decoration: none;
     color: #E20025;
     padding: 8px 16px;
@@ -109,10 +108,8 @@
     font-weight: bold;
 }
 
-.pagination a.active {
-    background-color: #0060AA;
-    color: white;
-    border: 1px solid #0060AA;
+.pagination a:visited {
+    color: #C0C0C0;
 }
 
 .pagination a:hover {
@@ -120,3 +117,10 @@
     background-color: #E20025;
     color: #FFFFFF;
 }
+
+.pagination a.active {
+    background-color: #0060AA;
+    color: white;
+    border: 1px solid #0060AA;
+}
+

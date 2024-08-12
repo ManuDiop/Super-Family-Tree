@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import SuperHero
 from .forms import SuperHeroForm
+from django.contrib.auth.decorators import login_required
 
 # View du superhéros, de ses enfants, modification et suppression
+@login_required
 def superhero_detail(request, pk): 
     hero = get_object_or_404(SuperHero, pk=pk)
 
@@ -33,6 +35,7 @@ def superhero_detail(request, pk):
     return render(request, 'superhero/superhero_detail.html', context)
 
 # Ajout d'un superhéros
+@login_required
 def add_superhero(request):
     if request.method == 'POST':
         form = SuperHeroForm(request.POST)
@@ -45,13 +48,17 @@ def add_superhero(request):
     return render(request, 'superhero/add_superhero.html', {'form': form})
 
 # Résultat de la recherche
+login_required
 def search_hero(request):
     query = request.GET.get('q')
     if query:
         heroes = SuperHero.objects.filter(name__icontains=query)
         if heroes.count() == 1:
             return redirect('superhero_detail', pk=heroes.first().pk)
+        elif heroes.count() == 0:
+            return render(request, '404.html', status=404)
     else:
         heroes = SuperHero.objects.all()
 
     return render(request, 'authuser/home.html', {'heroes': heroes, 'query': query})
+

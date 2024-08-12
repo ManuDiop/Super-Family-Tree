@@ -57,7 +57,7 @@ Clone the repository : ``` git clone git@github.com:ManuDiop/Super-Family-Tree.g
 5. Access the app in your browser :\
 ``` http://localhost:8000 ```
 
-6. When needed :\
+6. When needed :
 - Stop the containers with ``` docker-compose down ```
 
 

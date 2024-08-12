@@ -51,7 +51,7 @@ def home(request):
 @login_required
 def home(request):
     heroes = SuperHero.objects.all().order_by('name')
-    paginator = Paginator(heroes, 9)
+    paginator = Paginator(heroes, 11)
 
     page = request.GET.get('page')
 

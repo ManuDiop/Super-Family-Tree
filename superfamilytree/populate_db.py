@@ -9,117 +9,40 @@ from superhero.models import SuperHero
 
 def populate():
     # Créer des super-héros sans parent (racine de l'arbre)
-    frozone = SuperHero.objects.create(
-        name="Frozone", 
-        description="Master of ice and cold", 
-        skill1="Ice manipulation", 
-        skill2="Cold resistance", 
-        skill3="Skating", 
-        image="frozone.jpg",
+    spiderman = SuperHero.objects.create(
+        name="Spiderman", 
+        description="A teenage superhero with spider-like abilities", 
+        skill1="Wall-Crawling", 
+        skill2="Spider-Sense", 
+        skill3="Superhuman Agility", 
+        image="spiderman.jpg",
     )
 
-    batman = SuperHero.objects.create(
-        name="Batman", 
-        description="Dark Knight of Gotham", 
-        skill1="Martial Arts", 
-        skill2="Detective Skills", 
-        skill3="Stealth", 
-        image="batman.jpg"
+    blackpanther = SuperHero.objects.create(
+        name="Black Panther", 
+        description="The king of Wakanda, using his enhanced abilities and vibranium suit to protect his people and the world.",
+        skill1="Enhanced Agility", 
+        skill2="Vibranium Suit", 
+        skill3="Master Combatant", 
+        image="blackpanther.jpg",
     )
 
-    thor = SuperHero.objects.create(
-        name="Thor", 
-        description="God of Thunder", 
-        skill1="Lightning control", 
-        skill2="Super Strength", 
-        skill3="Immortality", 
-        image="thor.jpg"
+    john = SuperHero.objects.create(
+        name="John 'BouclierMan'", 
+        description="Initially unaware of his abilities, John discovers that he has the power to neutralize other superpowers.",
+        skill1="Power Neutralization", 
+        skill2="Enhanced Reflexes", 
+        skill3="Strategic Thinking", 
+        image="bouclier-man.jpg"
     )
 
-    rocket = SuperHero.objects.create(
-        name="Rocket", 
-        description="Expert marksman and tactician", 
-        skill1="Expert Marksman", 
-        skill2="Engineering", 
-        skill3="Tactics", 
-        image="rocket.jpg"
-    )
-    
-    groot = SuperHero.objects.create(
-        name="Groot", 
-        description="Living tree with regenerative abilities", 
-        skill1="Regeneration", 
-        skill2="Super Strength", 
-        skill3="Size manipulation", 
-        image="groot.jpg",
-        parent=rocket
-    )
-
-
-    daredevil = SuperHero.objects.create(
-        name="Daredevil", 
-        description="The Man Without Fear", 
-        skill1="Enhanced senses", 
-        skill2="Martial Arts", 
-        skill3="Acrobatics", 
-        image="daredevil.jpg",
-    )
-
-    black_widow = SuperHero.objects.create(
-        name="Black Widow", 
-        description="Elite spy and combatant", 
-        skill1="Espionage", 
-        skill2="Martial Arts", 
-        skill3="Tactics", 
-        image="black_widow.jpg"
-    )
-
-    catwoman = SuperHero.objects.create(
-        name="Catwoman", 
-        description="Master thief and skilled fighter", 
-        skill1="Stealth", 
-        skill2="Acrobatics", 
-        skill3="Martial Arts", 
-        image="catwoman.jpg",
-        parent=black_widow
-    )
-
-    gamorra = SuperHero.objects.create(
-        name="Gamorra", 
-        description="Deadliest woman in the galaxy", 
-        skill1="Swordsmanship", 
-        skill2="Martial Arts", 
-        skill3="Tactics", 
-        image="gamorra.jpg",
-        parent=catwoman
-    )
-
-    wolverine = SuperHero.objects.create(
-        name="Wolverine", 
-        description="The best there is at what he does", 
-        skill1="Regeneration", 
-        skill2="Adamantium skeleton", 
-        skill3="Enhanced senses", 
-        image="wolverine.jpg"
-    )
-
-    tornade = SuperHero.objects.create(
-        name="Tornado", 
-        description="Weather-controlling mutant", 
-        skill1="Weather manipulation", 
-        skill2="Flight", 
-        skill3="Energy projection", 
-        image="tornade.jpg",
-        parent=wolverine
-    )
-
-    professor_xavier = SuperHero.objects.create(
-        name="Professor X", 
-        description="Leader of the X-Men with powerful telepathy", 
-        skill1="Telepathy", 
-        skill2="Mind control", 
-        skill3="Genius-level intellect", 
-        image="professor_x.jpg"
+    doctor_strange = SuperHero.objects.create(
+        name="Doctor Strange", 
+        description="A former neurosurgeon who becomes the Sorcerer Supreme, protecting Earth from magical and mystical threats. He is known for his mastery of the mystic arts and his ability to traverse different dimensions.",
+        skill1="Mastery of Magic", 
+        skill2="Dimensional Manipulation", 
+        skill3="Astral Projection", 
+        image="doctor-strange.jpg"
     )
 
     print("Database populated successfully!")

@@ -40,10 +40,33 @@ Used for icons on the website
 
 ## Installation and setup 
 
-1. Clone the project 
+### Option 1
+
+1. Prerequisites :\
+Make sure you have Docker and Docker Compose installed on your system.
+
+2. How to run ?\
+Clone the repository : ``` git clone git@github.com:ManuDiop/Super-Family-Tree.git ```
+
+3. Place yourself in the project in order to be able to use ```docker-compose.yml ``` file :\
+``` cd superfamilytree ```
+
+4. Build and start the containers :\
+``` docker-compose up --build ```
+
+5. Access the app in your browser :\
+``` http://localhost:8000 ```
+
+6. When needed :\
+- Stop the containers with ``` docker-compose down ```
+
+
+### Option 2
+
+1. Clone the repository 
 ``` git clone git@github.com:ManuDiop/Super-Family-Tree.git ```
 
-2. Place yourself in the project in order to be able to use manage.py file\
+2. Place yourself in the project in order to be able to use ``` manage.py ``` file :\
 ``` cd superfamilytree ```
 
 3. Create a virtual environnement\
@@ -61,6 +84,7 @@ Used for icons on the website
 
 7. Access the app\
 Open your browser and go to ``` http://127.0.0.1:8000 ``` as instructed in your terminal
+
 
 
 ## Project structure 

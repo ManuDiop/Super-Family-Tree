@@ -116,5 +116,5 @@ I chose not to use a frontend framework since the user interface was limited to 
 - Implement advanced search filters to find superheroes by skills or relationships.
 - Enhance the style and responsiveness of the user interface for a better mobile interface.
 - Find a way for the user to add his superhero image (not only the url) maybe with an image storage API. For now only a developper can upload an image by storing it in the assets folder and inserting its path in the DB. 
-- I have created a personnalized 404 page but, as I am still in dev mode (Debug=True), I cannot display it without modifying my ```settings.py``` or deploying the app.
+- I have created a personnalized 404 page but, as I am still in dev mode (Debug=True), I cannot display it without modifying my ```settings.py``` or deploying the app. This point needs improvement.
 

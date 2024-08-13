@@ -27,8 +27,8 @@
 
             <div class="relations">
                 <div class="button-group">
-                    <button onclick="showParents()">Show parents</button>
-                    <button onclick="showChildren()">Show children</button>
+                    <button id="show-parents-btn" onclick="toggleDisplay('parents')">Show parents</button>
+                    <button id="show-children-btn" onclick="toggleDisplay('children')">Show children</button>
                 </div>
 
                 <!-- Arbre des parents -->
@@ -47,11 +47,12 @@
 
                 <!-- Arbre des enfants -->
                 <div id="children-tree" style="display:none;">
-                    {% if children %}
-                        <ul class="tree">
-                            {% for child in children %}
-                            <li>{{ child.name }}</li>
-                            {% endfor %}
+                    {% if hero.children.all %}
+                        <ul class="tree">  
+                            <li class="current-hero">{{ hero.name }}</li>
+                            <li>
+                                {% include 'superhero/children.html' with children=hero.children.all %}
+                            </li>
                         </ul>
                     {% else %}
                         <p>No children</p>
@@ -62,30 +63,33 @@
     </main>
 
     <script>
-        function showParents() {
-            document.getElementById("parent-tree").style.display = "block";
-            document.getElementById("children-tree").style.display = "none";
-        }
-    
-        function showChildren() {
-            document.getElementById("parent-tree").style.display = "none";
-            document.getElementById("children-tree").style.display = "block";
+        function toggleDisplay(type) {
+            const parentTree = document.getElementById('parent-tree');
+            const childrenTree = document.getElementById('children-tree');
+
+            if (type === 'parents') {
+                parentTree.style.display = 'block';
+                childrenTree.style.display = 'none';
+            } else {
+                parentTree.style.display = 'none';
+                childrenTree.style.display = 'block';
+            }
         }
 
         // Script pour l'indentation 
         document.addEventListener("DOMContentLoaded", function() {
             // éléments li dans les arbres généalogiques
-            var parentItems = document.querySelectorAll("#parent-tree .tree li");
-            var childItems = document.querySelectorAll("#children-tree .tree li");
+            const parentItems = document.querySelectorAll("#parent-tree .tree li");
+            const childItems = document.querySelectorAll("#children-tree .tree li");
             
             // indentation pour les parents
             parentItems.forEach(function(item, index) {
-                item.style.marginLeft = (index * 20) + 'px'; 
+                item.style.marginLeft = (index * 10) + 'px'; 
             });
             
             // indentation pour les enfants
             childItems.forEach(function(item, index) {
-                item.style.marginLeft = (index * 20) + 'px';
+                item.style.marginLeft = (index * 10) + 'px';
             });
         });
     </script>

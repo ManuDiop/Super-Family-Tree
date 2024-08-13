@@ -26,11 +26,21 @@ def superhero_detail(request, pk):
         parents.append(current_hero)
         current_hero = current_hero.parent
 
+    def get_descendants(hero):
+        descendants = []
+        for child in hero.children.all():
+            descendants.append(child)
+            descendants.extend(get_descendants(child))
+        return descendants
+    
+    descendants = get_descendants(hero)
+
     context = {
         'hero': hero,
         'form': form,
         'parents': parents[::-1],
         'children': hero.children.all(),
+        'descendants': descendants
     }
     return render(request, 'superhero/superhero_detail.html', context)
 

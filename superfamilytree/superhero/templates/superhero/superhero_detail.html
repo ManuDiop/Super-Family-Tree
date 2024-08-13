@@ -51,9 +51,7 @@
                     {% if hero.children.all %}
                         <ul class="tree">  
                             <li class="current-hero">{{ hero.name }}</li>
-                            <li>
-                                {% include 'superhero/children.html' with children=hero.children.all %}
-                            </li>
+                            <li>{% include 'superhero/children.html' with children=hero.children.all %}</li>
                         </ul>
                     {% else %}
                         <p>No children</p>

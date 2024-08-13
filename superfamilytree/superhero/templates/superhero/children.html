@@ -1,10 +1,10 @@
 {% for child in children %}
-    <li>
+    <ul>
         {{ child.name }}
         {% if child.children.all %}
-            <ul>
+            <li>
                 {% include 'superhero/children.html' with children=child.children.all %}
-            </ul>
+            </li>
         {% endif %}
-    </li>
+        </ul>
 {% endfor %}

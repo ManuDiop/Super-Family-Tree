@@ -90,7 +90,7 @@ Open your browser and go to ``` http://127.0.0.1:8000 ``` as instructed in your 
 ## Project structure 
 
 - **authuser**\
-Manages user authentication, including signup, login, logout and also the homepage app.
+Manages user authentication, including signup, login, logout and homepage.
 
 - **superhero**\
 The main application for managing superheroes, including models, views, and templates.

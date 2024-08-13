@@ -79,7 +79,7 @@ Clone the repository : ``` git clone git@github.com:ManuDiop/Super-Family-Tree.g
 5. Apply migrations\
 ``` python manage.py migrate ```
 
-6. Run de development server\
+6. Run the development server\
 ``` python manage.py runserver ```
 
 7. Access the app\

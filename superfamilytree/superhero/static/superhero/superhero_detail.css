@@ -30,6 +30,11 @@
     justify-content: space-between;
 }
 
+#delete {
+    background-color: #E20025;
+    color: #FFFFFF;
+}
+
 .relations button {
     flex: 1;
     padding: 10px;

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-y7z#8rqo!_u*-ug956&6^ifii_97r1pc^krb6(6)hmx!69kw^w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.superfamilytree.com', '185.166.39.206']
+ALLOWED_HOSTS = ['www.superfamilytree.com', '185.166.39.206', 'localhost']
 
 
 # Application definition

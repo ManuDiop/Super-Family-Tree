@@ -1,0 +1,83 @@
+/* Style général pour le formulaire d'ajout de super-héros */
+.add-superhero-container {
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #010101;
+    font-family: 'Comics', sans-serif;
+    font-style: italic;
+    min-height: 100vh;
+}
+
+/* Conteneur du formulaire */
+.add-superhero-form {
+    background-color: #FFFFFF;
+    border: 2px solid #0060AA;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour les champs du formulaire */
+.add-superhero-form input,
+.add-superhero-form textarea,
+.add-superhero-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: 2px solid #0060AA;
+    background-color: #FFFFFF;
+    color: #010101;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.add-superhero-form input:focus,
+.add-superhero-form textarea:focus,
+.add-superhero-form select:focus {
+    outline: none;
+    border-color: #004080;
+}
+
+/* Style pour le bouton de soumission */
+.add-superhero-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0060AA;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.add-superhero-form button[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+/* Style pour le lien de retour */
+.add-superhero-container a {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #E20025;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.add-superhero-container a:hover {
+    color: #004080;
+    text-decoration: none;
+}
+
+/* Style pour le titre de la page */
+.add-superhero-container h1 {
+    text-align: center;
+    color: #010101;
+    margin-bottom: 20px;
+    font-size: 24px;
+}

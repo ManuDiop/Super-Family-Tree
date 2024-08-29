@@ -1,13 +1,31 @@
+version: '3'
+
 services:
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn myproject.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/app
     ports:
       - "8000:8000"
     environment:
-      - DEBUG=1
+      - DEBUG=0
+      - ALLOWED_HOSTS=www.superfamilytree.com,185.166.39.206
+      - DATABASE_URL=sqlite:///db.sqlite3 
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./static:/static
+      - ./media:/media
+    depends_on:
+      - web
     networks:
       - app-network
 

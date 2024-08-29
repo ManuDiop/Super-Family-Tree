@@ -1,0 +1,88 @@
+/* Style pour le container principal */
+.superhero-container {
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.superhero-detail, .relations {
+    flex: 1;
+    background-color: #FFFFFF;
+    border: 2px solid #0060AA;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour les relations (parent/enfant) */
+.relations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.relations .button-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#delete {
+    background-color: #E20025;
+    color: #FFFFFF;
+}
+
+.relations button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.relations button:first-of-type {
+    background-color: #E20025;
+    color: #FFFFFF;
+}
+
+.relations button:last-of-type {
+    background-color: #FFED10;
+    color: #0060AA;
+}
+
+.relations button:hover {
+    opacity: 0.9;
+}
+
+.relations div {
+    margin-top: 10px;
+    background-color: #FFFFFF;
+    border: 2px solid #0060AA;
+    border-radius: 15px;
+    padding: 15px;
+    width: 100%;
+}
+
+/* Style pour le super-héros actuel (current hero) */
+.current-hero {
+    color: #010101;
+    font-weight: bold;
+    background-color: #FFF0E1;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Arbre généalogique */
+.tree, .tree li{
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+
+
